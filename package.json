@@ -1,0 +1,14 @@
+{
+  "name": "po2",
+  "version": "1.0.0",
+  "description": "practicum programmeren 4",
+  "main": "po2/po2.js",
+  "scripts": {
+    "start": "node ./po2/po2.js"
+  },
+  "author": "Corné",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
