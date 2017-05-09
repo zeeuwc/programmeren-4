@@ -1,13 +1,7 @@
 var express = require('express');
 var app = express();
+var port = process.env.PORT || 3000;
 
-
-
-
-
-app.listen(3000, function() {
-    console.log('Server app is listening on port 3000');
-})
 app.get('/json', function(request, response) {
     response.json({
         'some_name': 'Value',
@@ -27,4 +21,30 @@ app.get('/json', function(request, response) {
             "twee", "drie", "vijf", "zeven"
         ]
     })
+})
+
+app.get('/', function(request, response) {
+    response.send('Hello Avans!');
+})
+
+app.get('/about', function(request, response) {
+    response.send('Written by <corné de zeeuw>');
+})
+
+app.post('/', function(request, response) {
+    response.send('Hello Avans, POST request received!');
+})
+
+app.put('/', function(request, response) {
+    response.send('Hello Avans, PUT request received!');
+})
+
+app.all('*', function(request, response) {
+    response.status(404);
+    response.send('404 - Not found');
+})
+
+
+app.listen(port, function() {
+    console.log('Server app is listening on port '+port);
 })
